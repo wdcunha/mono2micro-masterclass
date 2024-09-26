@@ -7,12 +7,12 @@ import jakarta.ws.rs.core.MediaType;
 
 import java.util.List;
 
-@Path("order")
-public class OrderResource {
+@Path("travelorder")
+public class TravelOrderResource {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Order> orders() {
-        return Order.listAll();
+    public List<TravelOrder> orders() {
+        return TravelOrder.listAll();
     }
 }

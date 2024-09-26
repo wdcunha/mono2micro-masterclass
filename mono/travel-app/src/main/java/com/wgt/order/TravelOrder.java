@@ -24,7 +24,7 @@ import jakarta.persistence.Entity;
  * }
  */
 @Entity
-public class Order extends PanacheEntity {
+public class TravelOrder extends PanacheEntity {
 
 }
 
