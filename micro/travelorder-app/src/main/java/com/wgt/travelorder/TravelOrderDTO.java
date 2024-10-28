@@ -1,7 +1,5 @@
 package com.wgt.travelorder;
 
-import com.wgt.flight.Flight;
-import com.wgt.hotel.Hotel;
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 
 
@@ -22,14 +20,13 @@ public class TravelOrderDTO extends PanacheEntity {
     }
 
     public static TravelOrderDTO of(TravelOrder order, Flight flight, Hotel hotel) {
-        // add verificações por conta de dados ficticios que usavam a sequence (video 12:45 - aula3)
         if(flight == null) {
             flight = new Flight();
         }
         if(hotel == null) {
             hotel = new Hotel();
         }
-        return new TravelOrderDTO(flight.fromAirport, flight.toAirport, hotel.nights);
+        return new TravelOrderDTO(flight.getFromAirport(), flight.getToAirport(), hotel.getNights());
     }
 
     public static TravelOrderDTO of(String fromAirport, String toAirport, Integer nights) {
